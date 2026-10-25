@@ -29,6 +29,12 @@ addHosNClinics.classList.add("navbar-item")
 addHosNClinics.innerText = "Add Hospital & Clinics"
 navStart.append(addHosNClinics)
 addHosNClinics.href = "addHC.html"
+
+const displayHC = document.createElement("a")
+displayHC.classList.add("navbar-item")
+displayHC.innerText = "Display Clinics"
+navStart.append(displayHC)
+displayHC.href = "hosp&clinic.html"
 }
 
 function submit (){
