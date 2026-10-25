@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Hospital & Clinics</title>
+    <link href="bulma.min.css" rel="stylesheet"/>
+    <script src="addHC.js" defer></script>
+</head>
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation"></nav>
+
+    <form action="" class ="addHC">
+        <div class="field">
+             <label  class="label">Name</label>
+            <div class="control">
+                <input class="input" name ="name" type="text">
+             </div>
+        </div>
+    
+        <div class="field">
+            <label class="label">Type</label>
+            <div class="control">
+                <div class="select">
+                    <select name ="type">
+                        <option>Clinic</option>
+                        <option>Hospital</option>
+                    </select>
+                </div>    
+        </div>
+        </div>
+        
+        <div class="field">
+            <div class="control">
+                <label class="label">Location</label>
+                <div class="select">
+                    <select name="location">
+                        <option>Calgary NE</option>
+                        <option>Calgary NW</option>
+                        <option>Calgary SE</option>
+                        <option>Calgary SW</option>
+                  </select>
+                </div>    
+        
+            </div>  
+        </div>
+        <div class="field">
+            <label class="label">Services</label>
+            <div class="control">
+                        <div class="select">
+                            <select name="services">
+                                <option>Emergency</option>
+                                <option>Urgent Care</option>
+                                <option>Eye</option>
+                                <option>Dental</option>
+                                <option>Physiotheraphy</option>
+                                <option>Dermetology</option>
+                                <option>ENT specialist</option>
+                                <option>Veterinarian</option>
+                            </select>
+                        </div>
+                </div>    
+        </div>  
+        
+        <div class="field">
+            <label class = "label">Number of Doctors:</label>
+            <div class="control">
+            <input class="input" name="dcount" type="number" min="0" max="100" value="1" step="1">
+        </div>
+        </div>
+         
+        <div class="field">
+            <label class = "label">Waiting time (minutes):</label>
+            <div class="control">
+                <input class="input" name ="wt(min)" type="number" min="0" max="10000" value="0" step="1">
+            </div>
+
+        </div>
+        
+        <div class="field is-grouped mt-5">
+            <div class="control">
+                <button class="button is-link" id ="submit">Submit</button>
+            </div>
+            <div class="control">
+                <button class="button is-link is-light" id ="reset-form">Cancel</button>
+            </div>
+        </div>
+
+     </form>
+
+</body>
+</html>
