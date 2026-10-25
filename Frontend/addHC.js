@@ -37,7 +37,7 @@ navStart.append(displayHC)
 displayHC.href = "hosp&clinic.html"
 }
 
-function submit (){
+async function submit (){
     const hNCform = document.querySelector(".addHC")
     hNCform.addEventListener('submit', async (e)=>{
         // stop the pagr from reloading
@@ -45,21 +45,29 @@ function submit (){
         
         // Grab the data from the form
         const data = new FormData(hNCform)
-       
+       let exist = false
+      
         
         // divide the data into pairs
         const objectData = Object.fromEntries(data)
          console.log(objectData)
-
-        // create a promise
-        const res = await fetch("http://localhost:9000/hospitalsAndClinics",{
-            method:'POST',
-            headers:{
-                "Content-Type": "application/json" // sends the formData in JSON format
-            },
-            body: JSON.stringify(objectData) // turns javascript object to JSON String
-
-        })
+         const resE = await fetch("http://localhost:9000/hospitalsAndClinics")
+        const datasetE = await resE.json();
+        datasetE.forEach((dataE) => {
+            if (dataE.name == objectData.name){
+                exist = true
+            }
+        });
+        if (exist == false){
+              const res = await fetch("http://localhost:9000/hospitalsAndClinics",{
+                    method:'POST',
+                    headers:{
+                        "Content-Type": "application/json" // sends the formData in JSON format
+                    },
+                    body: JSON.stringify(objectData) // turns javascript object to JSON String
+                })
+        }
+      
 
 
     })

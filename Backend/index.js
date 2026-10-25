@@ -32,6 +32,11 @@ app.post('/hospitalsAndClinics', async(req, res) => {
     res.json(result)
 })
 
+app.put('/hospitalsAndClinics', async(req, res) => {
+  const result = await collection.updateOne({_id: new ObjectId(req.query.id)}, {$set: req.body})
+  res.send(result)
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
